@@ -1,0 +1,58 @@
+name: Despliegue
+
+# develop -> staging.salamandradigital.co
+# main    -> salamandradigital.co
+on:
+  push:
+    branches: [develop, main]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-${{ github.ref_name }}
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: ${{ github.ref_name == 'main' && 'produccion' || 'staging' }}
+    env:
+      TARGET: ${{ github.ref_name == 'main' && '/home/belltehp/salamandradigital.co/' || '/home/belltehp/staging.salamandradigital.co/' }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Revisar el PHP
+        run: php -l site/enviar-chequeo.php
+
+      - name: Ajustes de staging (no indexar)
+        if: github.ref_name != 'main'
+        run: |
+          printf 'User-agent: *\nDisallow: /\n' > site/robots.txt
+          rm -f site/sitemap.xml
+          printf '\n<IfModule mod_headers.c>\nHeader always set X-Robots-Tag "noindex, nofollow"\n</IfModule>\n' >> site/.htaccess
+
+      - name: Preparar SSH
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          SSH_HOST: ${{ secrets.SSH_HOST }}
+          SSH_PORT: ${{ secrets.SSH_PORT }}
+        run: |
+          install -m 700 -d ~/.ssh
+          printf '%s\n' "$SSH_PRIVATE_KEY" > ~/.ssh/id_deploy
+          chmod 600 ~/.ssh/id_deploy
+          ssh-keyscan -p "$SSH_PORT" -H "$SSH_HOST" >> ~/.ssh/known_hosts 2>/dev/null
+
+      - name: Publicar con rsync
+        env:
+          SSH_HOST: ${{ secrets.SSH_HOST }}
+          SSH_PORT: ${{ secrets.SSH_PORT }}
+          SSH_USER: ${{ secrets.SSH_USER }}
+        run: |
+          rsync -rlvz --checksum --delete --chmod=D755,F644 \
+            --exclude='.well-known/' --exclude='cgi-bin/' --exclude='error_log' \
+            --exclude='.user.ini' --exclude='php.ini' --exclude='.ftpquota' \
+            -e "ssh -i ~/.ssh/id_deploy -p $SSH_PORT -o BatchMode=yes" \
+            site/ "$SSH_USER@$SSH_HOST:$TARGET"
+
+      - name: Limpiar llave
+        if: always()
+        run: rm -f ~/.ssh/id_deploy

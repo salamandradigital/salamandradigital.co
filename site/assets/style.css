@@ -424,3 +424,9 @@ p { margin: 0 0 1em; }
 @media (max-width: 1020px) { .services { grid-template-columns: 1fr 1fr; } .checks { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 860px) { .rules { grid-template-columns: 1fr; } }
 @media (max-width: 560px) { .services, .checks { grid-template-columns: 1fr; } }
+
+/* Clases que reemplazan estilos en línea (CSP estricta) */
+.footer__brand{color:#fff}
+.btn--ghost-light{color:#fff;border-color:#fff}
+.actions--spaced{margin-top:20px}
+.note--muted{color:#8E95A6}
