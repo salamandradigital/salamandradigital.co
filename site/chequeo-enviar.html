@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Envía tu web · Chequeo de Privacidad | Salamandra Digital</title>
+<meta name="robots" content="noindex">
+<meta name="description" content="Formulario para enviar la dirección de tu web y recibir tu Chequeo de Privacidad.">
+<link rel="canonical" href="https://salamandradigital.co/chequeo-enviar.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Envía tu web · Chequeo de Privacidad">
+<meta property="og:description" content="Formulario del Chequeo de Privacidad.">
+<meta property="og:url" content="https://salamandradigital.co/chequeo-enviar.html">
+<meta property="og:image" content="https://salamandradigital.co/assets/logo.png">
+<meta property="og:locale" content="es_CO">
+<link rel="icon" type="image/png" href="assets/logo.png">
+<link rel="preload" href="assets/fonts/questrial-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/style.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Envía tu web para el Chequeo de Privacidad"}</script>
+</head>
+<body>
+<a class="skip" href="#contenido">Saltar al contenido</a>
+
+<header class="header">
+  <div class="wrap header__inner">
+    <a class="header__logo" href="./" aria-label="Salamandra Digital, inicio"><img src="assets/logo.png" alt="Salamandra Digital" width="259" height="143"></a>
+    <nav class="nav" aria-label="Principal">
+      <a href="./#cadena">La cadena de la venta</a>
+      <a href="./#evaluacion">La evaluación</a>
+      <a href="./#nosotros">Quiénes somos</a>
+      <a class="btn btn--small" href="https://calendly.com/salamandrradigital/evaluacion" target="_blank" rel="noopener">Agenda tu evaluación</a>
+    </nav>
+  </div>
+</header>
+
+<main id="contenido">
+  <section class="section">
+    <div class="wrap">
+      <p class="kicker">Chequeo de Privacidad</p>
+      <h2>Envíanos la dirección de tu web</h2>
+      <p class="lead">Con estos datos hacemos tu revisión. Recibirás tu informe en PDF en máximo 48 horas hábiles en el correo que indiques.</p>
+      <form class="form" action="enviar-chequeo.php" method="post">
+        <label>Tu nombre<input type="text" name="nombre" required maxlength="120" autocomplete="name"></label>
+        <label>Correo donde quieres recibir el informe<input type="email" name="correo" required maxlength="160" autocomplete="email"><small>Usa el mismo correo con el que compraste.</small></label>
+        <label>Dirección de la web a revisar<input type="url" name="web" required maxlength="300" placeholder="https://tuweb.com"></label>
+        <label>Página de tu embudo o de venta (opcional)<input type="url" name="pagina" maxlength="300" placeholder="https://tuweb.com/oferta"></label>
+        <label class="hp" aria-hidden="true">No llenar<input type="text" name="sitio_web" tabindex="-1" autocomplete="off"></label>
+        <label class="check"><input type="checkbox" name="autoriza" value="si" required><span>Soy dueño de esta web o la represento, y autorizo a Salamandra Digital a revisarla.</span></label>
+        <label class="check"><input type="checkbox" name="politica" value="si" required><span>Leí la <a href="privacidad.html">política de privacidad</a>. Usaremos tus datos solo para hacer y enviarte tu informe.</span></label>
+        <div><button class="btn" type="submit">Enviar mi web</button></div>
+      </form>
+      <p class="note">Este informe presenta hallazgos técnicos. No constituye asesoría legal ni certifica cumplimiento normativo.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer__inner">
+    <div><span style="color:#fff">Salamandra Digital</span> · El sistema que hace que tu negocio funcione.<br>Chía, Cundinamarca, Colombia</div>
+    <nav class="footer__links" aria-label="Secundaria">
+      <a href="mailto:contacto@salamandradigital.co">contacto@salamandradigital.co</a>
+      <a href="recursos/plantilla-seguimiento-clientes.html">Plantilla gratuita de seguimiento</a>
+      <a href="privacidad.html">Privacidad</a>
+      <a href="https://www.instagram.com/salamandradigital" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://calendly.com/salamandrradigital/evaluacion" target="_blank" rel="noopener">Agendar evaluación</a>
+    </nav>
+    <p class="footer__clean">© 2026 Salamandra Digital. Este sitio no usa cookies ni herramientas de seguimiento.</p>
+  </div>
+</footer>
+<aside class="aviso" id="aviso" role="region" aria-label="Aviso de privacidad">
+  <p class="aviso__title">Este sitio no usa cookies</p>
+  <p>Ni cookies, ni píxeles, ni analítica. No hay nada que aceptar: así se ve una web que respeta tu privacidad.</p>
+  <div class="aviso__actions">
+    <button class="aviso__ok" type="button" onclick="document.getElementById('aviso').hidden=true">Entendido</button>
+    <a href="privacidad.html">Ver cómo lo hacemos</a>
+  </div>
+</aside>
+</body>
+</html>
