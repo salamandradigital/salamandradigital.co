@@ -35,18 +35,27 @@ jobs:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
           SSH_HOST: ${{ secrets.SSH_HOST }}
           SSH_PORT: ${{ secrets.SSH_PORT }}
+          SSH_USER: ${{ secrets.SSH_USER }}
         run: |
           install -m 700 -d ~/.ssh
-          printf '%s\n' "$SSH_PRIVATE_KEY" > ~/.ssh/id_deploy
+          # Quita retornos de carro de Windows (CRLF) y espacios sobrantes
+          printf '%s\n' "$SSH_PRIVATE_KEY" | tr -d '\r' | sed -e 's/[[:space:]]*$//' > ~/.ssh/id_deploy
           chmod 600 ~/.ssh/id_deploy
-          ssh-keyscan -p "$SSH_PORT" -H "$SSH_HOST" >> ~/.ssh/known_hosts 2>/dev/null
+          HOST=$(printf '%s' "$SSH_HOST" | tr -d '[:space:]'); PORT=$(printf '%s' "$SSH_PORT" | tr -d '[:space:]')
+          echo "SSH_HOST=$HOST" >> "$GITHUB_ENV"; echo "SSH_PORT=$PORT" >> "$GITHUB_ENV"
+          echo "Formato de la llave: $(head -1 ~/.ssh/id_deploy)"
+          if ssh-keygen -y -P '' -f ~/.ssh/id_deploy > /dev/null 2>&1; then echo "Llave privada válida y sin passphrase"; else echo "::error::La llave no es una llave privada válida o tiene passphrase"; exit 1; fi
+          ssh-keyscan -T 15 -p "$PORT" -H "$HOST" >> ~/.ssh/known_hosts 2>/dev/null || true
+          echo "Huellas del servidor registradas: $(wc -l < ~/.ssh/known_hosts)"
+          ssh -i ~/.ssh/id_deploy -p "$PORT" -o BatchMode=yes -o ConnectTimeout=15 -o StrictHostKeyChecking=accept-new \
+            "$(printf '%s' "$SSH_USER" | tr -d '[:space:]')@$HOST" 'echo "Conexión SSH correcta"; command -v rsync' \
+            || { echo "::error::No se pudo conectar por SSH (revisar usuario, puerto o que la llave pública esté autorizada)"; exit 1; }
 
       - name: Publicar con rsync
         env:
-          SSH_HOST: ${{ secrets.SSH_HOST }}
-          SSH_PORT: ${{ secrets.SSH_PORT }}
           SSH_USER: ${{ secrets.SSH_USER }}
         run: |
+          SSH_USER=$(printf '%s' "$SSH_USER" | tr -d '[:space:]')
           rsync -rlvz --checksum --delete --chmod=D755,F644 \
             --exclude='.well-known/' --exclude='cgi-bin/' --exclude='error_log' \
             --exclude='.user.ini' --exclude='php.ini' --exclude='.ftpquota' \
