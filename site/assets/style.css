@@ -459,3 +459,17 @@ p { margin: 0 0 1em; }
   .track__item:not(:has(.track__more))::after { display: none; }
 }
 @media (prefers-reduced-motion: reduce) { .proj__path { transition: none; } }
+
+/* ===== Gestión de proyectos: espejo del dolor ===== */
+.mirror { list-style: none; padding: 0; margin: 32px 0; display: grid; grid-template-columns: 1fr 1fr; gap: 14px 24px; }
+.mirror li { display: flex; }
+.mirror__item { display: flex; align-items: flex-start; position: relative; width: 100%; text-align: left; cursor: pointer; font: inherit; padding: 18px 20px 18px 54px; background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); color: var(--navy); font-size: 1.05rem; line-height: 1.45; transition: border-color .15s, background .15s; }
+.mirror__item::before { content: ""; position: absolute; left: 20px; top: 20px; width: 18px; height: 18px; border: 2px solid var(--purple); border-radius: 5px; }
+.mirror__item:hover { border-color: var(--purple); }
+.mirror__item[aria-pressed="true"] { border-color: var(--purple); background: var(--tint); }
+.mirror__item[aria-pressed="true"]::before { content: "✓"; background: var(--purple); color: var(--white); font-size: 13px; line-height: 18px; text-align: center; }
+.mirror__item:focus-visible { outline: 2px solid var(--purple); outline-offset: 2px; }
+.mirror__count { margin: -8px 0 16px; color: var(--purple); font-size: 1.05rem; }
+.table-wrap { overflow-x: auto; }
+.sides__so { margin: 28px 0 16px; max-width: 900px; }
+@media (max-width: 760px) { .mirror { grid-template-columns: 1fr; } }

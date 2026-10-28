@@ -14,3 +14,23 @@
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', iniciar); else iniciar();
 })();
+
+// Lista "¿Te suena?": marcar lo que le pasa al visitante. No guarda nada.
+(function () {
+  function iniciar() {
+    var items = document.querySelectorAll('.mirror__item');
+    var out = document.getElementById('mirror-count');
+    if (!items.length || !out) return;
+    items.forEach(function (b) {
+      b.addEventListener('click', function () {
+        b.setAttribute('aria-pressed', b.getAttribute('aria-pressed') === 'true' ? 'false' : 'true');
+        var n = document.querySelectorAll('.mirror__item[aria-pressed="true"]').length;
+        out.hidden = n === 0;
+        out.textContent = n >= 2
+          ? 'Marcaste ' + n + '. Tu proyecto necesita a alguien que responda por él completo.'
+          : 'Marcaste 1. Sigue: ¿te pasa alguna otra?';
+      });
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', iniciar); else iniciar();
+})();
