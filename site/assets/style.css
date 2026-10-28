@@ -481,3 +481,5 @@ p { margin: 0 0 1em; }
 .shortcuts a:hover { border-bottom-color: var(--purple); }
 .proj__ask { margin: 32px 0 0; color: var(--navy); font-size: 1.1rem; }
 .mirror--home { margin: 16px 0 12px; }
+
+.hero--line h1.h1--long { max-width: 20ch; font-size: clamp(2rem, 4.2vw, 3.1rem); }
