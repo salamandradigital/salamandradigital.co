@@ -473,3 +473,11 @@ p { margin: 0 0 1em; }
 .table-wrap { overflow-x: auto; }
 .sides__so { margin: 28px 0 16px; max-width: 900px; }
 @media (max-width: 760px) { .mirror { grid-template-columns: 1fr; } }
+
+/* ===== Home: accesos directos y espejo de proyectos ===== */
+.shortcuts { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 18px; margin-top: 22px; padding-top: 18px; border-top: 1px solid var(--line); }
+.shortcuts span { color: var(--gray); font-size: .92rem; width: 100%; }
+.shortcuts a { color: var(--purple); font-size: 1rem; text-decoration: none; border-bottom: 1px solid rgba(104,81,218,.35); padding-bottom: 2px; }
+.shortcuts a:hover { border-bottom-color: var(--purple); }
+.proj__ask { margin: 32px 0 0; color: var(--navy); font-size: 1.1rem; }
+.mirror--home { margin: 16px 0 12px; }
