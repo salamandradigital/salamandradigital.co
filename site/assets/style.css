@@ -555,3 +555,9 @@ p { margin: 0 0 1em; }
 /* Gestión operativa (sección en la página de proyectos) */
 .ops-quotes { display: flex; flex-wrap: wrap; gap: 12px; margin: 28px 0 8px; }
 .ops-quotes blockquote { margin: 0; padding: 12px 18px; background: var(--tint); border-radius: 10px; color: var(--navy); font-size: 1.02rem; }
+
+/* Página Responder */
+.features--4 { grid-template-columns: repeat(4, 1fr); }
+.features__note { margin: 28px 0 0; }
+@media (max-width: 960px) { .features--4 { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 600px) { .features--4 { grid-template-columns: 1fr; } }
