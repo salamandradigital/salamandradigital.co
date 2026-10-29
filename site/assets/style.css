@@ -483,3 +483,19 @@ p { margin: 0 0 1em; }
 .mirror--home { margin: 16px 0 12px; }
 
 .hero--line h1.h1--long { max-width: 20ch; font-size: clamp(2rem, 4.2vw, 3.1rem); }
+
+/* ===== Privacidad: cuatro razones ===== */
+.parts--4 { grid-template-columns: repeat(2, 1fr); }
+@media (max-width: 860px) { .parts--4 { grid-template-columns: 1fr; } }
+
+/* ===== Testimonio ===== */
+.testimonial { margin: 0 auto; max-width: 820px; background: var(--white); border-radius: var(--radius); padding: 44px 48px; border-left: 0; position: relative; }
+.testimonial::before { content: "\201C"; position: absolute; top: 8px; left: 28px; font-size: 5rem; line-height: 1; color: var(--purple); opacity: .25; }
+.testimonial blockquote { margin: 0; }
+.testimonial__lead { font-size: clamp(1.35rem, 2.6vw, 1.75rem); line-height: 1.35; color: var(--navy); margin: 0 0 18px; }
+.testimonial blockquote p:not(.testimonial__lead) { color: var(--text); font-size: 1.05rem; line-height: 1.7; margin: 0; }
+.testimonial figcaption { margin-top: 26px; padding-top: 18px; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: baseline; }
+.testimonial figcaption b { font-weight: 400; color: var(--navy); font-size: 1.1rem; }
+.testimonial figcaption span { color: var(--gray); font-size: .95rem; }
+.testimonial__service { width: 100%; color: var(--purple) !important; font-size: .9rem !important; }
+@media (max-width: 600px) { .testimonial { padding: 36px 24px; } .testimonial::before { left: 14px; } }
