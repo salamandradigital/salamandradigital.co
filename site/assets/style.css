@@ -537,3 +537,5 @@ p { margin: 0 0 1em; }
   .ticker__track { animation: none; }
   .ticker { overflow-x: auto; }
 }
+.price span b { font-weight: 400; color: var(--navy); }
+.price strong { flex-basis: 100%; }
