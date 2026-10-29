@@ -522,3 +522,18 @@ p { margin: 0 0 1em; }
 .creator-types span { color: var(--gray); font-size: .95rem; }
 .section:not(.section--light) .testimonial { background: var(--tint); }
 @media (max-width: 860px) { .creator-types { grid-template-columns: 1fr; } }
+
+/* ===== Cinta de servicios (arriba de todo) ===== */
+.ticker { background: var(--navy); overflow: hidden; white-space: nowrap; }
+.ticker__track { display: inline-flex; animation: ticker 38s linear infinite; }
+.ticker:hover .ticker__track, .ticker:focus-within .ticker__track { animation-play-state: paused; }
+.ticker__group { display: inline-flex; align-items: center; flex-shrink: 0; }
+.ticker a { color: #E6E9F0; text-decoration: none; font-size: .74rem; letter-spacing: .14em; text-transform: uppercase; padding: 9px 18px; }
+.ticker a:hover, .ticker a:focus-visible { color: var(--cyan); }
+.ticker a:focus-visible { outline: 2px solid var(--cyan); outline-offset: -4px; }
+.ticker__sep { color: var(--cyan); font-size: .6rem; }
+@keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) {
+  .ticker__track { animation: none; }
+  .ticker { overflow-x: auto; }
+}
