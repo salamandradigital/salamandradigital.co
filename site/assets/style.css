@@ -499,3 +499,18 @@ p { margin: 0 0 1em; }
 .testimonial figcaption span { color: var(--gray); font-size: .95rem; }
 .testimonial__service { width: 100%; color: var(--purple) !important; font-size: .9rem !important; }
 @media (max-width: 600px) { .testimonial { padding: 36px 24px; } .testimonial::before { left: 14px; } }
+
+/* ===== Proyectos: tres caminos y lanzamientos ===== */
+.paths--3 { grid-template-columns: repeat(3, 1fr); }
+.path p a { color: var(--purple); }
+.launch { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin: 36px 0 24px; }
+.launch__col { background: var(--tint); border-radius: var(--radius); padding: 28px; }
+.launch__col h3 { margin: 0 0 12px; font-size: 1.2rem; }
+.launch__col p { margin: 12px 0 0; color: var(--text); }
+.launch__col .types { margin-top: 0; }
+.launch__col--extra { background: var(--navy); }
+.launch__col--extra h3 { color: var(--cyan); }
+.launch__col--extra p { color: #D9DDE6; }
+@media (max-width: 960px) { .paths--3, .launch { grid-template-columns: 1fr; } }
+.section--divided { border-top: 1px solid var(--line); }
+.launch__col .tag { background: var(--white); }
