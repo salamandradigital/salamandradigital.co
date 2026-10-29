@@ -514,3 +514,11 @@ p { margin: 0 0 1em; }
 @media (max-width: 960px) { .paths--3, .launch { grid-template-columns: 1fr; } }
 .section--divided { border-top: 1px solid var(--line); }
 .launch__col .tag { background: var(--white); }
+
+/* ===== Proyectos de creadores ===== */
+.creator-types { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 32px 0 8px; }
+.creator-types div { border: 1px solid var(--line); border-radius: var(--radius); padding: 20px 22px; display: flex; flex-direction: column; gap: 6px; }
+.creator-types b { font-weight: 400; color: var(--navy); font-size: 1.1rem; }
+.creator-types span { color: var(--gray); font-size: .95rem; }
+.section:not(.section--light) .testimonial { background: var(--tint); }
+@media (max-width: 860px) { .creator-types { grid-template-columns: 1fr; } }
