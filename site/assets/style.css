@@ -539,3 +539,15 @@ p { margin: 0 0 1em; }
 }
 .price span b { font-weight: 400; color: var(--navy); }
 .price strong { flex-basis: 100%; }
+
+/* Método MAPA (forma de trabajar, distinta de las 5 fases) */
+.mapa { margin-top: 36px; padding-top: 32px; border-top: 1px solid rgba(48,196,214,.35); }
+.mapa__intro { color: #D8DCE6; margin: 0 0 24px; max-width: 900px; }
+.mapa__intro b { color: var(--white); }
+.mapa__grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.mapa__item { background: rgba(255,255,255,.05); border-radius: var(--radius); padding: 22px 20px; }
+.mapa__letter { display: block; font-size: 2.6rem; line-height: 1; font-weight: 700; color: var(--cyan); margin-bottom: 12px; }
+.mapa__item h3 { font-size: 1.05rem; margin: 0 0 8px; }
+.mapa__item p { margin: 0; color: #D8DCE6; font-size: .95rem; }
+@media (max-width: 860px) { .mapa__grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 520px) { .mapa__grid { grid-template-columns: 1fr; } }
