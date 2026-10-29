@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Adaptación web al RGPD: qué revisar antes de pagar | Salamandra Digital</title>
+<meta name="description" content="Siete comprobaciones técnicas para saber qué hace tu web con los datos de tus visitantes antes de pagar una adaptación al RGPD: cookies, banner, analítica y consentimiento, según la guía de la AEPD.">
+<link rel="canonical" href="https://salamandradigital.co/recursos/rgpd-web-que-revisar">
+<link rel="icon" type="image/png" href="../assets/logo.png">
+<link rel="preload" href="../assets/fonts/questrial-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/style.css">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Tu web y el RGPD: qué revisar antes de pagar una adaptación">
+<meta property="og:description" content="Siete comprobaciones técnicas que puedes hacer tú mismo, con lo que dice la guía de cookies de la AEPD.">
+<meta property="og:url" content="https://salamandradigital.co/recursos/rgpd-web-que-revisar">
+<meta property="og:image" content="https://salamandradigital.co/assets/logo.png">
+<meta property="og:locale" content="es_ES">
+</head>
+<body>
+<a class="skip" href="#contenido">Saltar al contenido</a>
+<div class="ticker" role="region" aria-label="Servicios de Salamandra Digital"><div class="ticker__track"><div class="ticker__group"><a href="/gestion-de-proyectos-digitales">Gestión de proyectos digitales</a><span class="ticker__sep" aria-hidden="true">◆</span><a href="/gestion-de-proyectos-digitales#lanzamientos">Lanzamientos y proyectos de creadores</a><span class="ticker__sep" aria-hidden="true">◆</span><a href="/sistema-comercial">Que no se te pierda ningún cliente</a><span class="ticker__sep" aria-hidden="true">◆</span><a href="/automatizacion-e-ia">Responde a tiempo, sin estar pegado al celular</a><span class="ticker__sep" aria-hidden="true">◆</span><a href="/privacidad-digital">Protección de datos en tu página web</a><span class="ticker__sep" aria-hidden="true">◆</span><a href="/gestion-de-proyectos-digitales#operacion">Gestión operativa</a><span class="ticker__sep" aria-hidden="true">◆</span><a href="https://calendly.com/salamandrradigital/evaluacion" target="_blank" rel="noopener">Evaluación gratuita de 30 minutos</a><span class="ticker__sep" aria-hidden="true">◆</span></div><div class="ticker__group" aria-hidden="true"><a href="/gestion-de-proyectos-digitales" tabindex="-1">Gestión de proyectos digitales</a><span class="ticker__sep" aria-hidden="true">◆</span><a href="/gestion-de-proyectos-digitales#lanzamientos" tabindex="-1">Lanzamientos y proyectos de creadores</a><span class="ticker__sep" aria-hidden="true">◆</span><a href="/sistema-comercial" tabindex="-1">Que no se te pierda ningún cliente</a><span class="ticker__sep" aria-hidden="true">◆</span><a href="/automatizacion-e-ia" tabindex="-1">Responde a tiempo, sin estar pegado al celular</a><span class="ticker__sep" aria-hidden="true">◆</span><a href="/privacidad-digital" tabindex="-1">Protección de datos en tu página web</a><span class="ticker__sep" aria-hidden="true">◆</span><a href="/gestion-de-proyectos-digitales#operacion" tabindex="-1">Gestión operativa</a><span class="ticker__sep" aria-hidden="true">◆</span><a href="https://calendly.com/salamandrradigital/evaluacion" target="_blank" rel="noopener" tabindex="-1">Evaluación gratuita de 30 minutos</a><span class="ticker__sep" aria-hidden="true">◆</span></div></div></div>
+<header class="header">
+  <div class="wrap header__inner">
+    <a class="header__logo" href="../" aria-label="Salamandra Digital, inicio"><img src="../assets/logo.png" alt="Salamandra Digital" width="259" height="143"></a>
+    <nav class="nav" aria-label="Principal">
+      <a href="../">Inicio</a>
+      <a class="btn btn--small" href="https://calendly.com/salamandrradigital/evaluacion" target="_blank" rel="noopener">Agenda tu evaluación</a>
+    </nav>
+  </div>
+</header>
+<main id="contenido" class="legal article">
+  <p class="kicker">Guía gratuita · España</p>
+  <h1>Tu web y el RGPD: qué revisar antes de pagar una adaptación</h1>
+  <p class="lead">Antes de contratar una adaptación de tu web al RGPD, conviene saber qué hace hoy tu web con los datos de quien la visita. Estas siete comprobaciones las puedes hacer tú, con el navegador y sin instalar nada.</p>
+  <blockquote>
+<p>Esta guía presenta comprobaciones técnicas. No es asesoría legal ni certifica cumplimiento. La interpretación legal de tu caso la hace un abogado.</p>
+  </blockquote>
+
+<h2>Por qué empezar por lo técnico</h2>
+<p>Una adaptación suele tener dos partes: los textos (aviso legal, política de privacidad y política de cookies) y la configuración de la web (qué herramientas se cargan, cuándo y con qué permiso). Las dos importan.</p>
+<p>Esta guía es sobre la segunda, que es la que menos se revisa: un texto puede decir que nada se activa sin tu permiso mientras la web carga la analítica y la publicidad apenas se abre la página.</p>
+<p>Las referencias son a la <a href="https://www.aepd.es/guias/guia-cookies.pdf" target="_blank" rel="noopener">Guía sobre el uso de las cookies de la Agencia Española de Protección de Datos (AEPD)</a>, que desarrolla el artículo 22.2 de la LSSI y se actualizó para incluir los criterios del Comité Europeo de Protección de Datos.</p>
+
+<h2>Antes de empezar</h2>
+<ol>
+<li>Abre tu web en una <strong>ventana de incógnito</strong>, para empezar sin cookies guardadas.</li>
+<li>Abre las <strong>herramientas de desarrollador</strong> del navegador (tecla F12, o clic derecho → Inspeccionar).</li>
+<li>Ten a mano dos pestañas de esas herramientas: <strong>Aplicación</strong> (o Almacenamiento), donde ves las cookies, y <strong>Red</strong>, donde ves a qué servicios se conecta tu web.</li>
+</ol>
+
+<h2>Las siete comprobaciones</h2>
+
+<h3>1. Qué se carga antes de que el visitante decida</h3>
+<p><strong>Cómo comprobarlo:</strong> con el banner todavía abierto, sin tocar nada, mira las cookies en Aplicación. En Red, escribe en el filtro nombres como <em>google-analytics</em>, <em>googletagmanager</em>, <em>facebook</em>, <em>hotjar</em> o <em>tiktok</em>.</p>
+<p><strong>Qué deberías ver:</strong> solo lo necesario para que la web funcione. Ninguna herramienta de analítica, publicidad o mapas de calor.</p>
+<p><strong>Qué dice la guía de la AEPD:</strong> el uso de cookies no exentas solo puede darse cuando el usuario ya tiene la información y ha dado su consentimiento (apartado 3.2.5).</p>
+
+<h3>2. Rechazar es tan fácil como aceptar</h3>
+<p><strong>Cómo comprobarlo:</strong> mira el primer mensaje del banner. ¿Hay un botón para rechazar junto al de aceptar, del mismo tamaño y con la misma visibilidad?</p>
+<p><strong>Qué deberías ver:</strong> aceptar, rechazar y configurar en la misma pantalla. Rechazar no debería exigir entrar a un segundo menú.</p>
+<p><strong>Qué dice la guía:</strong> la opción para rechazar se ofrece en la misma capa y al mismo nivel que la de aceptar, y los botones no deben inducir a error por su color o contraste (apartado 3.2.1).</p>
+
+<h3>3. Que "rechazar" de verdad rechace</h3>
+<p><strong>Cómo comprobarlo:</strong> pulsa rechazar, recarga la página y repite la comprobación 1.</p>
+<p><strong>Qué deberías ver:</strong> lo mismo que antes de decidir. Si después de rechazar aparecen las cookies o conexiones de analítica y publicidad, el banner está de adorno.</p>
+<p><strong>Por qué pasa:</strong> es común que el banner esté instalado, pero que las herramientas se hayan añadido directamente al código de la web o por otra vía, sin pasar por él.</p>
+
+<h3>4. Sin casillas marcadas ni "si sigues navegando, aceptas"</h3>
+<p><strong>Cómo comprobarlo:</strong> entra en "configurar" y mira si alguna categoría viene activada. Lee el texto del banner.</p>
+<p><strong>Qué deberías ver:</strong> todas las categorías no necesarias desactivadas hasta que el visitante las active.</p>
+<p><strong>Qué dice la guía:</strong> no se admiten opciones premarcadas a favor de aceptar (apartado 3.1.2.2), y ni la inactividad ni seguir navegando equivalen a consentir (apartado 3.2.1).</p>
+
+<h3>5. La analítica también cuenta</h3>
+<p><strong>Cómo comprobarlo:</strong> anota qué herramientas de medición usas: analítica, mapas de calor, grabación de sesiones, etiquetas de publicidad de Meta, Google, TikTok o LinkedIn.</p>
+<p><strong>Qué deberías ver:</strong> que todas pasan por el banner, no solo la publicidad.</p>
+<p><strong>Qué dice la guía:</strong> las cookies de análisis no quedan exentas de consentimiento. El riesgo es menor cuando son de primera parte y con fines estadísticos, pero se sigue informando y dando la opción de negarse (apartado 2.1.2).</p>
+
+<h3>6. El visitante puede cambiar de opinión</h3>
+<p><strong>Cómo comprobarlo:</strong> después de aceptar, busca cómo volver a abrir la configuración: un enlace en el pie de página o un botón fijo.</p>
+<p><strong>Qué deberías ver:</strong> una forma visible de retirar el consentimiento, igual de sencilla que la de darlo.</p>
+<p><strong>Qué dice la guía:</strong> el consentimiento se puede retirar en cualquier momento, con un sistema tan fácil como el que se usó para darlo, y la política de cookies explica cómo hacerlo (apartado 3.2.9).</p>
+
+<h3>7. Lo que dice tu política coincide con lo que se carga</h3>
+<p><strong>Cómo comprobarlo:</strong> abre tu política de cookies y compárala con lo que encontraste en las comprobaciones 1 y 5.</p>
+<p><strong>Qué deberías ver:</strong> cada herramienta nombrada, con su finalidad, si es propia o de terceros y cuánto dura.</p>
+<p><strong>Por qué importa:</strong> las webs cambian. Cada vez que alguien añade una herramienta nueva, la política y el banner tienen que reflejarla.</p>
+
+<h2>Resumen para tener a mano</h2>
+<table>
+<thead><tr><th>Comprobación</th><th>Dónde mirar</th><th>Lo que deberías ver</th></tr></thead>
+<tbody>
+<tr><td>1. Antes de decidir</td><td>Aplicación y Red, banner abierto</td><td>Solo lo necesario para que la web funcione</td></tr>
+<tr><td>2. Rechazar = aceptar</td><td>Primer mensaje del banner</td><td>Los dos botones al mismo nivel</td></tr>
+<tr><td>3. El rechazo funciona</td><td>Rechazar, recargar y volver a mirar</td><td>Nada de analítica ni publicidad</td></tr>
+<tr><td>4. Nada premarcado</td><td>Configuración del banner</td><td>Categorías desactivadas por defecto</td></tr>
+<tr><td>5. La analítica cuenta</td><td>Lista de tus herramientas</td><td>Todas pasan por el banner</td></tr>
+<tr><td>6. Cambiar de opinión</td><td>Pie de página o botón fijo</td><td>Acceso visible a la configuración</td></tr>
+<tr><td>7. Política al día</td><td>Política de cookies</td><td>Cada herramienta nombrada y explicada</td></tr>
+</tbody>
+</table>
+
+<h2>Qué preguntar antes de pagar una adaptación</h2>
+<p>Con lo que encontraste, estas preguntas te ayudan a comparar propuestas por lo que incluyen, no solo por el precio:</p>
+<ul>
+<li>¿Revisan qué se carga antes y después del consentimiento, o solo redactan los textos?</li>
+<li>¿Me entregan la lista de herramientas que encontraron en mi web?</li>
+<li>¿Configuran el banner y las etiquetas, o eso lo tengo que hacer yo o mi desarrollador?</li>
+<li>¿Cómo comprueban que rechazar funciona?</li>
+<li>¿Qué pasa cuando añado una herramienta nueva dentro de tres meses?</li>
+<li>¿Qué parte la revisa un abogado?</li>
+</ul>
+
+  <section class="article__cta">
+    <h2>Si prefieres que lo revisemos nosotros</h2>
+    <p>Revisamos qué recoge tu web y con quién lo comparten tus herramientas, antes y después del consentimiento. Te entregamos los hallazgos en lenguaje simple y ordenados por prioridad, para que los lleves a tu abogado o a quien te haga la adaptación.</p>
+    <p>Son hallazgos técnicos, no asesoría legal.</p>
+    <a class="btn" href="../privacidad-digital">Ver cómo lo hacemos</a>
+    <a class="btn btn--light" href="https://calendly.com/salamandrradigital/evaluacion" target="_blank" rel="noopener">Agenda tu evaluación gratuita</a>
+  </section>
+
+<h2>Fuentes</h2>
+<ul>
+<li><a href="https://www.aepd.es/guias/guia-cookies.pdf" target="_blank" rel="noopener">AEPD · Guía sobre el uso de las cookies</a> (apartados 2.1.2, 3.1.2.2, 3.2.1, 3.2.5 y 3.2.9).</li>
+<li><a href="https://www.aepd.es/es/prensa-y-comunicacion/notas-de-prensa/aepd-actualiza-guia-cookies-para-adaptarla-a-nuevas-directrices-cepd" target="_blank" rel="noopener">AEPD · La AEPD actualiza su guía de cookies para adaptarla a las nuevas directrices del CEPD</a> (11 de julio de 2023).</li>
+</ul>
+<p><small>Revisado el 29 de octubre de 2026.</small></p>
+</main>
+<footer class="footer">
+  <div class="wrap footer__inner">
+    <div><span class="footer__brand">Salamandra Digital</span> · El sistema que hace que tu negocio funcione.<br>Chía, Cundinamarca, Colombia</div>
+    <nav class="footer__links" aria-label="Secundaria">
+      <a href="mailto:contacto@salamandradigital.co">contacto@salamandradigital.co</a>
+      <a href="../privacidad">Privacidad</a>
+      <a href="https://www.instagram.com/salamandradigital" target="_blank" rel="noopener">Instagram</a>
+    </nav>
+    <p class="footer__clean">© 2026 Salamandra Digital. Este sitio no usa cookies ni herramientas de seguimiento.</p>
+  </div>
+</footer>
+<aside class="aviso" id="aviso" hidden role="region" aria-label="Aviso de privacidad">
+  <p class="aviso__title">Este sitio no usa cookies</p>
+  <p>Ni cookies, ni píxeles, ni analítica. No hay nada que aceptar: así se ve una web que respeta tu privacidad.</p>
+  <div class="aviso__actions">
+    <button class="aviso__ok" type="button">Entendido</button>
+    <a href="../privacidad">Ver cómo lo hacemos</a>
+  </div>
+</aside>
+<script src="../assets/site.js" defer></script>
+</body>
+</html>
