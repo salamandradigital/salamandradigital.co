@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>¿En qué estado está tu proyecto digital? · Salamandra Digital</title>
+<meta name="description" content="Cuenta cómo va tu web, tu lanzamiento o tu sistema y recibe gratis su estado por fases, dónde está atascado y tres siguientes pasos.">
+<link rel="canonical" href="https://salamandradigital.co/recursos/estado-proyecto-digital">
+<link rel="icon" type="image/png" href="../assets/logo.png">
+<link rel="preload" href="../assets/fonts/questrial-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#contenido">Saltar al contenido</a>
+<div class="ticker" role="region" aria-label="Servicios de Salamandra Digital"><div class="ticker__track"><div class="ticker__group"><a href="/gestion-de-proyectos-digitales">Gestión de proyectos digitales</a><span class="ticker__sep" aria-hidden="true">◆</span><a href="/gestion-de-proyectos-digitales#lanzamientos">Lanzamientos y proyectos de creadores</a><span class="ticker__sep" aria-hidden="true">◆</span><a href="/sistema-comercial">Que no se te pierda ningún cliente</a><span class="ticker__sep" aria-hidden="true">◆</span><a href="/automatizacion-e-ia">Responde a tiempo, sin estar pegado al celular</a><span class="ticker__sep" aria-hidden="true">◆</span><a href="/privacidad-digital">Protección de datos en tu página web</a><span class="ticker__sep" aria-hidden="true">◆</span><a href="/gestion-de-proyectos-digitales#operacion">Gestión operativa</a><span class="ticker__sep" aria-hidden="true">◆</span><a href="https://calendly.com/salamandrradigital/evaluacion" target="_blank" rel="noopener">Evaluación gratuita de 30 minutos</a><span class="ticker__sep" aria-hidden="true">◆</span></div><div class="ticker__group" aria-hidden="true"><a href="/gestion-de-proyectos-digitales" tabindex="-1">Gestión de proyectos digitales</a><span class="ticker__sep" aria-hidden="true">◆</span><a href="/gestion-de-proyectos-digitales#lanzamientos" tabindex="-1">Lanzamientos y proyectos de creadores</a><span class="ticker__sep" aria-hidden="true">◆</span><a href="/sistema-comercial" tabindex="-1">Que no se te pierda ningún cliente</a><span class="ticker__sep" aria-hidden="true">◆</span><a href="/automatizacion-e-ia" tabindex="-1">Responde a tiempo, sin estar pegado al celular</a><span class="ticker__sep" aria-hidden="true">◆</span><a href="/privacidad-digital" tabindex="-1">Protección de datos en tu página web</a><span class="ticker__sep" aria-hidden="true">◆</span><a href="/gestion-de-proyectos-digitales#operacion" tabindex="-1">Gestión operativa</a><span class="ticker__sep" aria-hidden="true">◆</span><a href="https://calendly.com/salamandrradigital/evaluacion" target="_blank" rel="noopener" tabindex="-1">Evaluación gratuita de 30 minutos</a><span class="ticker__sep" aria-hidden="true">◆</span></div></div></div>
+<header class="header">
+  <div class="wrap header__inner">
+    <a class="header__logo" href="../" aria-label="Salamandra Digital, inicio"><img src="../assets/logo.png" alt="Salamandra Digital" width="259" height="143"></a>
+    <nav class="nav" aria-label="Principal">
+      <a href="../">Inicio</a>
+      <a class="btn btn--small" href="https://calendly.com/salamandrradigital/evaluacion" target="_blank" rel="noopener">Agenda tu evaluación</a>
+    </nav>
+  </div>
+</header>
+<main id="contenido" class="legal article estado">
+  <span class="kicker">Recurso gratuito · Proyectos digitales</span>
+  <h1>¿En qué estado está tu proyecto digital?</h1>
+  <p class="lead">Cuéntanos cómo va ese proyecto que no termina de salir: la web, el lanzamiento, el sistema que compraste o la campaña. Al final recibes su estado por fases, dónde está atascado y tres pasos concretos. Toma unos 7 minutos y es gratis.</p>
+  <p class="estado__demo"><button type="button" class="estado__link" id="btnEjemplo">Ver cómo funciona con un ejemplo</button> <span class="estado__tag" id="notaEjemplo" hidden>Datos de ejemplo. Cámbialos por los de tu proyecto.</span> <button type="button" class="estado__link" id="btnLimpiar" hidden>Borrar el ejemplo</button></p>
+
+  <form id="f" class="estado__form" novalidate>
+    <fieldset>
+      <legend><b>00</b> El proyecto</legend>
+      <div class="estado__row">
+        <label>Tipo de proyecto
+          <select id="tipo" name="tipo">
+            <option value="">Elige uno</option>
+            <option>Web nueva o rediseño</option>
+            <option>Lanzamiento</option>
+            <option>Implementación de un sistema</option>
+            <option>Campaña</option>
+            <option>Otro</option>
+          </select></label>
+        <label>Nombre del proyecto<input type="text" id="nombre" name="nombre" maxlength="120" placeholder="Ej.: nueva web del consultorio"></label>
+      </div>
+      <div class="estado__row">
+        <label>¿Cuándo empezó?<input type="date" id="inicio" name="inicio"></label>
+        <label>¿Cuándo debía entregarse?<input type="date" id="entrega" name="entrega"></label>
+      </div>
+      <label>¿Qué tanto crees que lleva hecho?
+        <span class="estado__range"><input type="range" id="avance" name="avance" min="0" max="100" step="5" value="40"><output id="avanceVal" for="avance">40%</output></span></label>
+    </fieldset>
+
+    <fieldset>
+      <legend><b>01</b> Inicio</legend>
+      <div class="estado__q" role="radiogroup" aria-labelledby="q-alcance">
+        <p id="q-alcance">¿Está escrito qué incluye el proyecto, qué no incluye y qué depende de ti?</p>
+        <div class="estado__seg">
+          <label><input type="radio" name="alcance" value="si">Sí, por escrito</label>
+          <label><input type="radio" name="alcance" value="medio">Más o menos</label>
+          <label><input type="radio" name="alcance" value="no">No</label></div></div>
+      <div class="estado__q" role="radiogroup" aria-labelledby="q-resp">
+        <p id="q-resp">¿Hay una persona responsable de que el proyecto avance? (no de ejecutarlo: de que avance)</p>
+        <div class="estado__seg">
+          <label><input type="radio" name="resp" value="si">Sí, alguien con ese rol</label>
+          <label><input type="radio" name="resp" value="yo">Soy yo, además de todo lo demás</label>
+          <label><input type="radio" name="resp" value="no">Nadie en concreto</label></div></div>
+    </fieldset>
+
+    <fieldset>
+      <legend><b>02</b> Planificación</legend>
+      <div class="estado__q" role="radiogroup" aria-labelledby="q-crono">
+        <p id="q-crono">¿Existe un cronograma con fechas por tarea?</p>
+        <div class="estado__seg">
+          <label><input type="radio" name="crono" value="si">Sí</label>
+          <label><input type="radio" name="crono" value="medio">Solo la fecha final</label>
+          <label><input type="radio" name="crono" value="no">No</label></div></div>
+      <div class="estado__q" role="radiogroup" aria-labelledby="q-duenos">
+        <p id="q-duenos">¿Cada tarea tiene un responsable con nombre?</p>
+        <div class="estado__seg">
+          <label><input type="radio" name="duenos" value="si">Todas</label>
+          <label><input type="radio" name="duenos" value="medio">Algunas</label>
+          <label><input type="radio" name="duenos" value="no">Ninguna</label></div></div>
+    </fieldset>
+
+    <fieldset>
+      <legend><b>03</b> Ejecución</legend>
+      <label>¿Qué ya está hecho?<textarea id="hecho" name="hecho" maxlength="2000" placeholder="Ej.: dominio comprado, textos de inicio listos, logo aprobado"></textarea></label>
+      <label>¿Qué falta?<textarea id="falta" name="falta" maxlength="2000" placeholder="Ej.: fotos, página de servicios, formulario de contacto"></textarea></label>
+      <label>¿Cuántos proveedores o personas externas participan?
+        <select id="prov" name="prov"><option value="0">Ninguno</option><option value="1">1</option><option value="2">2</option><option value="3">3 o más</option></select></label>
+    </fieldset>
+
+    <fieldset>
+      <legend><b>04</b> Seguimiento y control</legend>
+      <div class="estado__q" role="radiogroup" aria-labelledby="q-rev">
+        <p id="q-rev">¿Cada cuánto se revisa el avance?</p>
+        <div class="estado__seg">
+          <label><input type="radio" name="rev" value="semana">Cada semana</label>
+          <label><input type="radio" name="rev" value="mes">Cada mes</label>
+          <label><input type="radio" name="rev" value="acuerdo">Cuando alguien se acuerda</label>
+          <label><input type="radio" name="rev" value="nunca">No se revisa</label></div></div>
+      <label>¿Qué está trabado y por qué crees que está trabado?<textarea id="trabado" name="trabado" maxlength="1500" placeholder="Ej.: el diseñador no entrega porque espera mis fotos"></textarea></label>
+    </fieldset>
+
+    <fieldset>
+      <legend><b>05</b> Cierre</legend>
+      <div class="estado__q" role="radiogroup" aria-labelledby="q-cierre">
+        <p id="q-cierre">¿Está definido qué tiene que estar listo para dar el proyecto por entregado?</p>
+        <div class="estado__seg">
+          <label><input type="radio" name="cierre" value="si">Sí</label>
+          <label><input type="radio" name="cierre" value="medio">Más o menos</label>
+          <label><input type="radio" name="cierre" value="no">No</label></div></div>
+      <label>Decisiones que están esperando por ti<small>Una por línea. Si no hay ninguna, déjalo en blanco.</small><textarea id="decisiones" name="decisiones" maxlength="1500" placeholder="Ej.: elegir entre las dos propuestas de diseño"></textarea></label>
+    </fieldset>
+
+    <fieldset class="estado__opcional">
+      <legend>Opcional · Cuéntalo con tus palabras</legend>
+      <label>Cuenta la historia del proyecto como se la contarías a alguien de confianza: qué pasó, qué no pasó, con quién.<small>Lo leemos nosotros. Nos ayuda a entender tu caso si después quieres conversarlo.</small><textarea id="relato" name="relato" class="estado__largo" maxlength="6000"></textarea></label>
+    </fieldset>
+
+    <fieldset class="estado__datos">
+      <legend><b>06</b> ¿A dónde te enviamos tu estado?</legend>
+      <p class="note">Lo ves en pantalla apenas termines y te llega una copia a tu correo.</p>
+      <div class="estado__row">
+        <label>Tu nombre<input type="text" id="lnombre" name="lnombre" maxlength="120" autocomplete="given-name" required></label>
+        <label>Tu correo<input type="email" id="lcorreo" name="lcorreo" maxlength="160" autocomplete="email" required></label>
+      </div>
+      <div class="estado__row">
+        <label>Tu negocio (opcional)<input type="text" id="lnegocio" name="lnegocio" maxlength="120" autocomplete="organization"></label>
+        <label>WhatsApp (opcional)<input type="tel" id="lwhatsapp" name="lwhatsapp" maxlength="30" autocomplete="tel" placeholder="+57 300 000 0000"></label>
+      </div>
+      <label class="hp" aria-hidden="true">No llenar<input type="text" id="lweb" name="lweb" tabindex="-1" autocomplete="off"></label>
+      <label class="check"><input type="checkbox" id="lconsent" name="lconsent"><span>Autorizo a Salamandra Digital a usar mis datos para enviarme mi estado y escribirme sobre él y sobre servicios relacionados. Puedo conocerlos, corregirlos o pedir que los borren cuando quiera en contacto@salamandradigital.co. <a href="../privacidad" target="_blank" rel="noopener">Política de tratamiento de datos</a>.</span></label>
+    </fieldset>
+
+    <div class="estado__enviar">
+      <button type="submit" class="btn" id="btnEnviar">Ver el estado de mi proyecto</button>
+      <p class="estado__error" id="err" role="alert"></p>
+    </div>
+  </form>
+
+  <section id="resultado" class="estado__resultado" hidden aria-live="polite"></section>
+</main>
+<footer class="footer">
+  <div class="wrap footer__inner">
+    <div><span class="footer__brand">Salamandra Digital</span> · El sistema que hace que tu negocio funcione.<br>Chía, Cundinamarca, Colombia</div>
+    <nav class="footer__links" aria-label="Secundaria">
+      <a href="mailto:contacto@salamandradigital.co">contacto@salamandradigital.co</a>
+      <a href="../privacidad">Privacidad</a>
+      <a href="https://www.instagram.com/salamandradigital" target="_blank" rel="noopener">Instagram</a>
+    </nav>
+    <p class="footer__clean">© 2026 Salamandra Digital. Este sitio no usa cookies ni herramientas de seguimiento.</p>
+  </div>
+</footer>
+<aside class="aviso" id="aviso" hidden role="region" aria-label="Aviso de privacidad">
+  <p class="aviso__title">Este sitio no usa cookies</p>
+  <p>Ni cookies, ni píxeles, ni analítica. No hay nada que aceptar: así se ve una web que respeta tu privacidad.</p>
+  <div class="aviso__actions">
+    <button class="aviso__ok" type="button">Entendido</button>
+    <a href="../privacidad">Ver cómo lo hacemos</a>
+  </div>
+</aside>
+<script src="../assets/site.js" defer></script>
+<script src="../assets/estado.js" defer></script>
+</body>
+</html>

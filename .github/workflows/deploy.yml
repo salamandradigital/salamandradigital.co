@@ -21,12 +21,12 @@ jobs:
       - uses: actions/checkout@v5
 
       - name: Revisar el PHP
-        run: php -l site/enviar-chequeo.php
+        run: php -l site/enviar-chequeo.php && php -l site/enviar-estado.php
 
       - name: Versionar CSS y JS (evita que el navegador use una copia vieja)
         run: |
           V="${GITHUB_SHA::8}"
-          find site -name '*.html' -exec sed -i -E "s#(assets/(style\.css|site\.js))\"#\1?v=$V\"#g" {} +
+          find site -name '*.html' -exec sed -i -E "s#(assets/(style\.css|site\.js|estado\.js))\"#\1?v=$V\"#g" {} +
           grep -rl "style.css?v=$V" site | head -3
 
       - name: Ajustes de staging (no indexar)
